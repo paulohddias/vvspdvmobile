@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07487C"
+    tools:context=".ModeloAzulFragment">
+
+    <!-- Terceiro Passo -->
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/modelo_fragment" />
+
+    <Button
+        android:id="@+id/bt10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salvar"
+        />
+
+
+</FrameLayout>

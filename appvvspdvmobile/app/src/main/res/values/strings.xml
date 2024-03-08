@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AppVvsPdv</string>
+    <string name="txt_titulo">Gasolina X Etanol</string>
+    <string name="txt_gasolina">Gasolina</string>
+    <string name="txt_etanol">Etanol</string>
+    <string name="txt_button_calcular">CALCULAR</string>
+    <string name="txt_resultado">Resultado</string>
+    <string name="txt_qtd_litros">QTD Litros</string>
+    <string name="txt_total_pagar">Total a Pagar</string>
+    <string name="txt_km_atual">KM Atual</string>
+    <string name="btn_melhor_opcao">Melhor opção</string>
+    <string name="rb_gasolina">Gasolina</string>
+    <string name="rb_etanol">Etanol</string>
+    <string name="txt_historico_abastecimento">Histórico de Abastecimento</string>
+
+
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Cliente</string>
+    <string name="nav_header_subtitle">Dev: Paulo Dias</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Sair</string>
+    <string name="modelo_fragment">Fragmento Modelo</string>
+</resources>
