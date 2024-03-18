@@ -9,6 +9,7 @@ import java.util.List;
 import devandroid.paulo.appvvspdvmobile.api.AppUtil;
 import devandroid.paulo.appvvspdvmobile.datamodel.AbastecimentoDataModel;
 import devandroid.paulo.appvvspdvmobile.datasource.AppDataBase;
+import devandroid.paulo.appvvspdvmobile.interfaces.ICrud;
 import devandroid.paulo.appvvspdvmobile.model.Abastecimento;
 
 

@@ -1,9 +1,7 @@
 package devandroid.paulo.appvvspdvmobile.view;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +11,15 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import java.io.IOException;
-
 import devandroid.paulo.appvvspdvmobile.R;
-import devandroid.paulo.appvvspdvmobile.json.ApiClient;
-import devandroid.paulo.appvvspdvmobile.model.Cep;
-
-import com.google.gson.Gson;
+import devandroid.paulo.appvvspdvmobile.api.AppUtil;
+import devandroid.paulo.appvvspdvmobile.interfaces.ViaCepService;
+import devandroid.paulo.appvvspdvmobile.model.ViaCep;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ModeloAzulFragment extends Fragment {
@@ -46,7 +46,7 @@ public class ModeloAzulFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_azul, container, false);
+        view = inflater.inflate(R.layout.fragment_azul, container, false);
 
         responseTextView = view.findViewById(R.id.responseTextView);
         btnBuscaCep = view.findViewById(R.id.btnbuscacep);
@@ -58,32 +58,47 @@ public class ModeloAzulFragment extends Fragment {
             public void onClick(View view) {
                 String cep = editCep.getText().toString();
 
-                new ApiTask().execute("https://viacep.com.br/ws/"+cep+"/json/");
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("https://viacep.com.br/ws/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                ViaCepService service = retrofit.create(ViaCepService.class);
+
+                Call<ViaCep> call = service.buscarEnderecoPorCEP(cep);
+                call.enqueue(new Callback<ViaCep>() {
+                    @Override
+                    public void onResponse(Call<ViaCep> call, Response<ViaCep> response) {
+                        if (response.isSuccessful()) {
+                            ViaCep viacep = response.body();
+                            // Faça o que quiser com os dados do endereço aqui
+
+                            String enderecoCompleto = "";
+                            enderecoCompleto += "Endereço: " + viacep.getLogradouro() + "\n";
+                            enderecoCompleto += "Complemento: " + viacep.getComplemento() + "\n";
+                            enderecoCompleto += "Bairro: " + viacep.getBairro() + "\n";
+                            enderecoCompleto += "Cidade: " + viacep.getLocalidade() + "\n";
+                            enderecoCompleto += "Estado: " + viacep.getUf() + "\n";
+                            enderecoCompleto += "Cod. IBGE: " + viacep.getIbge() + "\n";
+
+                            responseTextView.setText(enderecoCompleto);
+
+
+                        } else {
+                            Log.d(AppUtil.TAG, "ModeloAzulFragment: onResponse: nao conseguiu consumir api");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ViaCep> call, Throwable t) {
+                        Log.d(AppUtil.TAG, "ModeloAzulFragment: onFailure: nao conseguiu consumir api");
+                    }
+                });
 
             }
         });
 
         return view;
-    }
-
-    private class ApiTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                return ApiClient.getApiResponse(urls[0]);
-            } catch (IOException e) {
-                e.printStackTrace();
-                return "Error: " + e.getMessage();
-            }
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            Gson gson = new Gson();
-            Cep cep = gson.fromJson(result, Cep.class);
-            responseTextView.setText(cep.getLogradouro().toString());
-        }
     }
 
 

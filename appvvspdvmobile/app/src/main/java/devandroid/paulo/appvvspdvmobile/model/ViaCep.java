@@ -1,6 +1,6 @@
 package devandroid.paulo.appvvspdvmobile.model;
 
-public class Cep {
+public class ViaCep {
     private String cep, logradouro, complemento, bairro, localidade, uf, ibge, gia, ddd, siafi;
 
     public String getCep() {

@@ -1,4 +1,4 @@
-package devandroid.paulo.appvvspdvmobile.controller;
+package devandroid.paulo.appvvspdvmobile.interfaces;
 
 import java.util.List;
 

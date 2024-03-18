@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public class AppUtil {
 
-    public final static String TAG = "GasEta";
+    public final static String TAG = "AppVvs";
 
 
     public static String calcularMelhorOpcao(double gasolina, double etanol) {
