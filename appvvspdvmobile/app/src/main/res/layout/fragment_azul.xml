@@ -3,27 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#07487C"
-    tools:context=".ModeloAzulFragment">
+    tools:context="view.ModeloAzulFragment">
 
     <!-- Terceiro Passo -->
 
-    <TextView
-        android:id="@+id/txtTitulo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="10sp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/modelo_fragment" />
-
-    <Button
-        android:id="@+id/bt10"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="salvar"
-        />
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtcep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/editcep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_cep"
+                android:inputType="text"
+                android:textColor="#ffff" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnbuscacep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/btn_busca_cep" />
+
+        <TextView
+            android:id="@+id/responseTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/txt_cep_resultado"
+            android:textColor="#ffff"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
 </FrameLayout>

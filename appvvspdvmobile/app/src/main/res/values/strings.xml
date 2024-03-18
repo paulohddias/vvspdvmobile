@@ -23,4 +23,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Sair</string>
     <string name="modelo_fragment">Fragmento Modelo</string>
+    <string name="txt_cep">CEP</string>
+    <string name="btn_busca_cep">Buscar CEP</string>
+    <string name="txt_cep_resultado">Resultado do CEP</string>
 </resources>
