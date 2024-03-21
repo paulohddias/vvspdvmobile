@@ -3,20 +3,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8F1108"
-    tools:context=".ModeloVermelhoFragment">
+    tools:context="view.ModeloVermelhoFragment">
 
 
     <!-- Terceiro Passo -->
 
-    <TextView
-        android:id="@+id/txtTitulo"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="30sp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/modelo_fragment" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rgTipoVeiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdMotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="motos" />
+
+                <RadioButton
+                    android:id="@+id/rdCarros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="carros" />
+
+                <RadioButton
+                    android:id="@+id/rdCaminhoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="caminhoes" />
+
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTipoVeiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/btn_buscar_tipo_veiculo" />
+
+            <Spinner
+                android:id="@+id/spinnerVeiculoMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp" />
+
+            <Spinner
+                android:id="@+id/spinnerVeiculoModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/txtResultadoTipoVeiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_horizontal"
+                android:text="@string/txt_resultado"
+                android:textColor="#ffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

@@ -26,4 +26,6 @@
     <string name="txt_cep">CEP</string>
     <string name="btn_busca_cep">Buscar CEP</string>
     <string name="txt_cep_resultado">Resultado do CEP</string>
+    <string name="txt_tipo_veiculo">Veiculo - motos - carros - caminhoes</string>
+    <string name="btn_buscar_tipo_veiculo">Buscar Tipo Veiculo</string>
 </resources>
