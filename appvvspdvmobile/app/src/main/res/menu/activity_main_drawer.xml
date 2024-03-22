@@ -6,11 +6,6 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_gaseta"
-            android:icon="@drawable/ic_item_menu_padrao"
-            android:title="Gaseta" />
-
-        <item
             android:id="@+id/nav_preto"
             android:icon="@drawable/ic_item_menu_padrao"
             android:title="Fragmento Preto" />
@@ -18,17 +13,17 @@
         <item
             android:id="@+id/nav_vermelho"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="Fragmento Vermelho" />
+            android:title="API Tabela Fipe" />
 
         <item
             android:id="@+id/nav_azul"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="Fragmento Azul" />
+            android:title="API Busca CEP" />
 
         <item
             android:id="@+id/nav_verde"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="Fragmento Verde" />
+            android:title="Gaseta Ativado" />
 
     </group>
 

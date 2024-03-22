@@ -97,8 +97,8 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="35dp"
                         android:layout_marginEnd="16dp"
-                        app:icon="@drawable/ic_dollar"
-                        android:text="@string/btn_melhor_opcao" />
+                        android:text="@string/btn_melhor_opcao"
+                        app:icon="@drawable/ic_dollar" />
 
                 </LinearLayout>
 

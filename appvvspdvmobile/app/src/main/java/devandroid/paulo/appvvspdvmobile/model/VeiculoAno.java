@@ -27,9 +27,6 @@ public class VeiculoAno {
 
     @Override
     public String toString() {
-        return "Ano{" +
-                "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
+        return nome;
     }
 }

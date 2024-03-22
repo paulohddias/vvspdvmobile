@@ -26,9 +26,6 @@ public class VeiculoModelo {
 
     @Override
     public String toString() {
-        return "Modelo{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                '}';
+        return nome;
     }
 }

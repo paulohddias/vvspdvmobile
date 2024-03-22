@@ -22,7 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class ModeloAzulFragment extends Fragment {
+public class ApiCepFragment extends Fragment {
 
     private View view;
 
@@ -32,7 +32,7 @@ public class ModeloAzulFragment extends Fragment {
 
     private TextView responseTextView;
 
-    public ModeloAzulFragment() {
+    public ApiCepFragment() {
     }
 
 
@@ -46,7 +46,7 @@ public class ModeloAzulFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_azul, container, false);
+        view = inflater.inflate(R.layout.fragment_api_cep, container, false);
 
         responseTextView = view.findViewById(R.id.responseTextView);
         btnBuscaCep = view.findViewById(R.id.btnbuscacep);

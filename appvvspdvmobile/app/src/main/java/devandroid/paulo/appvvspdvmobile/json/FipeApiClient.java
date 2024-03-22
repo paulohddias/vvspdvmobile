@@ -4,6 +4,8 @@ import java.util.List;
 
 import devandroid.paulo.appvvspdvmobile.interfaces.VeiculoMarcaService;
 import devandroid.paulo.appvvspdvmobile.model.ApiResponseVeiculoModelo;
+import devandroid.paulo.appvvspdvmobile.model.VeiculoAno;
+import devandroid.paulo.appvvspdvmobile.model.VeiculoByFipe;
 import devandroid.paulo.appvvspdvmobile.model.VeiculoMarca;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,15 +28,24 @@ public class FipeApiClient {
     }
 
     public void fetchTipoVeiculos(String tipoVeiculo, Callback<List<VeiculoMarca>> callback) {
-        Call<List<VeiculoMarca>> call = apiService.buscarVeiculoMarcas(tipoVeiculo);
+        Call<List<VeiculoMarca>> call = apiService.getcarVeiculoMarcas(tipoVeiculo);
         call.enqueue(callback);
     }
 
 
-    public void fetchModelosAndAnos(String tipoVeiculo, String codMarcaVeiculo, Callback<ApiResponseVeiculoModelo> callback) {
+    public void fetchModelosAndAnosByMarca(String tipoVeiculo, String codMarcaVeiculo, Callback<ApiResponseVeiculoModelo> callback) {
         Call<ApiResponseVeiculoModelo> call = apiService.getModelosAndAnos(tipoVeiculo, codMarcaVeiculo);
         call.enqueue(callback);
     }
 
+    public void fetchModelosAndAnosByModelo(String tipoVeiculo, String codMarcaVeiculo, String codVeiculoModelo, Callback<List<VeiculoAno>> callback) {
+        Call<List<VeiculoAno>> call = apiService.getModelosAndAnos(tipoVeiculo, codMarcaVeiculo, codVeiculoModelo);
+        call.enqueue(callback);
+    }
 
+    public void fetchVeiculoByFipe(String tipoVeiculo, String codMarcaVeiculo, String codVeiculoModelo, String codVeiculoAno, Callback<VeiculoByFipe> callback) {
+        Call<VeiculoByFipe> call = apiService.getVeiculoByFipe(tipoVeiculo, codMarcaVeiculo, codVeiculoModelo, codVeiculoAno);
+        call.enqueue(callback);
+
+    }
 }

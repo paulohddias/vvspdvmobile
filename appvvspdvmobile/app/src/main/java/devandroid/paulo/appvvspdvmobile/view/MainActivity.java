@@ -1,7 +1,5 @@
 package devandroid.paulo.appvvspdvmobile.view;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -114,18 +112,19 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto Ativado");
+            nav_preto.setTitle("Fragmento Preto Ativado");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
+            nav_vermelho.setTitle("API Tabela Fipe");
 
             nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
+            nav_azul.setTitle("API Busca CEP");
 
             nav_verde = menu.findItem(R.id.nav_verde);
-            nav_verde.setTitle("Verde");
+            nav_verde.setTitle("Gaseta");
 
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            //navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            navigationView.setItemTextAppearance(R.style.menu_item);
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
 
@@ -134,60 +133,62 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-
-            nav_preto.setTitle("Preto");
+            nav_preto.setTitle("Fragmento Preto");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho Ativado");
+            nav_vermelho.setTitle("API Tabela Fipe Ativado");
 
             nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
+            nav_azul.setTitle("API Busca CEP");
 
             nav_verde = menu.findItem(R.id.nav_verde);
-            nav_verde.setTitle("Verde");
+            nav_verde.setTitle("Gaseta");
 
             // TODO: Mudar a cor de todos os itens do menu programaticamente
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            //navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            navigationView.setItemTextAppearance(R.style.menu_item);
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ApiTableFipeFragment()).commit();
 
         } else if (id == R.id.nav_azul) {
 
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto");
+            nav_preto.setTitle("Fragmento Preto");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
+            nav_vermelho.setTitle("API Tabela Fipe");
 
             nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul Ativado");
+            nav_azul.setTitle("API Busca CEP Ativado");
 
             nav_verde = menu.findItem(R.id.nav_verde);
-            nav_verde.setTitle("Verde");
+            nav_verde.setTitle("Gaseta");
 
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            //navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            navigationView.setItemTextAppearance(R.style.menu_item);
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ApiCepFragment()).commit();
 
         }else if (id == R.id.nav_verde) {
 
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto");
+            nav_preto.setTitle("Fragmento Preto");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
+            nav_vermelho.setTitle("API Tabela Fipe");
 
             nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
+            nav_azul.setTitle("API Busca CEP");
 
             nav_verde = menu.findItem(R.id.nav_verde);
-            nav_verde.setTitle("Verde Ativado");
+            nav_verde.setTitle("Gaseta Ativado");
 
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            //navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            navigationView.setItemTextAppearance(R.style.menu_item);
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVerdeFragment()).commit();
 

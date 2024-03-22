@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8F1108"
-    tools:context="view.ModeloVermelhoFragment">
+    tools:context=".view.ApiTableFipeFragment">
 
 
     <!-- Terceiro Passo -->
@@ -44,6 +43,72 @@
 
             </RadioGroup>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtTextSearchMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/editTextSearchMarca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_veiculo_marca"
+                    android:inputType="text"
+                    android:textColor="#ffff" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerVeiculoMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtTextSearchModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/editTextSearchModelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_veiculo_modelo"
+                    android:inputType="text"
+                    android:textColor="#ffff" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerVeiculoModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <Spinner
+                android:id="@+id/spinnerVeiculoModeloAno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTipoVeiculo"
                 android:layout_width="match_parent"
@@ -54,21 +119,6 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/btn_buscar_tipo_veiculo" />
 
-            <Spinner
-                android:id="@+id/spinnerVeiculoMarca"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp" />
-
-            <Spinner
-                android:id="@+id/spinnerVeiculoModelo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp" />
 
             <TextView
                 android:id="@+id/txtResultadoTipoVeiculo"
