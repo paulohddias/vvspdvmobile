@@ -40,6 +40,9 @@ dependencies {
     //biblioteca de mascara telefone - https://github.com/santalu/maskara
     implementation("com.github.santalu:maskara:1.0.0")
 
+    //biblioteca para mascara no editText - https://github.com/VicMikhailau/MaskedEditText
+    implementation("io.github.vicmikhailau:MaskedEditText:5.0.1")
+
     //biblioteca para imagem gif //https://github.com/bumptech/glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 

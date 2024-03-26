@@ -1,5 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#07487C"
@@ -20,12 +21,13 @@
             android:layout_marginEnd="16dp"
             android:layout_weight="1">
 
-            <EditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/editcep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_cep"
-                android:inputType="text"
+                android:inputType="number"
+                app:mask="#####-###"
                 android:textColor="#ffff" />
         </com.google.android.material.textfield.TextInputLayout>
 

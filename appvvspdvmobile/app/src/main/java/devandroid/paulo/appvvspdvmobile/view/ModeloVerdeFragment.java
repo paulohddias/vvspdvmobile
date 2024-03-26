@@ -70,8 +70,6 @@ public class ModeloVerdeFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_verde, container, false);
 
-        TextView txtTitulo = view.findViewById(R.id.txtTitulo);
-
 
         abastecimentoControler = new AbastecimentoControler(view.getContext());
 

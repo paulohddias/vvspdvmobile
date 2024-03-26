@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        txtTitulo = findViewById(R.id.txtTitulo);
+        //txtTitulo = findViewById(R.id.txtTitulo);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Fragmento Preto Ativado");
+            nav_preto.setTitle("Api Brasil CNPJ Ativado");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("API Tabela Fipe");
@@ -126,14 +126,14 @@ public class MainActivity extends AppCompatActivity
             //navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
             navigationView.setItemTextAppearance(R.style.menu_item);
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new BrasilApiCnpjFragment()).commit();
 
         } else if (id == R.id.nav_vermelho) {
 
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Fragmento Preto");
+            nav_preto.setTitle("Api Brasil CNPJ");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("API Tabela Fipe Ativado");
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Fragmento Preto");
+            nav_preto.setTitle("Api Brasil CNPJ");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("API Tabela Fipe");
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Fragmento Preto");
+            nav_preto.setTitle("Api Brasil CNPJ");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("API Tabela Fipe");

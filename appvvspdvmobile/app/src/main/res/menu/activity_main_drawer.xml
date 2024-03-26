@@ -8,7 +8,7 @@
         <item
             android:id="@+id/nav_preto"
             android:icon="@drawable/ic_item_menu_padrao"
-            android:title="Fragmento Preto" />
+            android:title="API Brasil CNPJ" />
 
         <item
             android:id="@+id/nav_vermelho"

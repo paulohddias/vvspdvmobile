@@ -31,4 +31,7 @@
     <string name="txt_veiculo_modelo">Busca Modelo</string>
     <string name="txt_veiculo_marca">Busca Marca</string>
     <string name="txt_veiculo_modelo_ano">Busca Ano</string>
+    <string name="btn_busca_cnpj">Buscar CNPJ</string>
+    <string name="txt_cnpj_resultado">Resultado CNPJ</string>
+    <string name="txt_CNPJ">CNPJ</string>
 </resources>
