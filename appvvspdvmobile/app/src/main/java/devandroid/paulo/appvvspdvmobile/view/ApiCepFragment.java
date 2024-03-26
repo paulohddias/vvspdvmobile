@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import devandroid.paulo.appvvspdvmobile.R;
 import devandroid.paulo.appvvspdvmobile.api.AppUtil;
 import devandroid.paulo.appvvspdvmobile.interfaces.ViaCepService;
+import devandroid.paulo.appvvspdvmobile.json.CepApiClient;
 import devandroid.paulo.appvvspdvmobile.model.ViaCep;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +33,10 @@ public class ApiCepFragment extends Fragment {
 
     private TextView responseTextView;
 
+    private CepApiClient cepApiClient;
+
+    private ViaCep viaCep;
+
     public ApiCepFragment() {
     }
 
@@ -48,6 +53,8 @@ public class ApiCepFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_api_cep, container, false);
 
+        cepApiClient = new CepApiClient();
+
         responseTextView = view.findViewById(R.id.responseTextView);
         btnBuscaCep = view.findViewById(R.id.btnbuscacep);
         editCep = view.findViewById(R.id.editcep);
@@ -58,32 +65,23 @@ public class ApiCepFragment extends Fragment {
             public void onClick(View view) {
                 String cep = editCep.getText().toString();
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://viacep.com.br/ws/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
-                ViaCepService service = retrofit.create(ViaCepService.class);
-
-                Call<ViaCep> call = service.buscarEnderecoPorCEP(cep);
-                call.enqueue(new Callback<ViaCep>() {
+                cepApiClient.fetchCep(cep, new Callback<ViaCep>() {
                     @Override
                     public void onResponse(Call<ViaCep> call, Response<ViaCep> response) {
                         if (response.isSuccessful()) {
-                            ViaCep viacep = response.body();
+                            //Trabalhar com os dados capturados
+                            viaCep = response.body();
                             // Faça o que quiser com os dados do endereço aqui
 
                             String enderecoCompleto = "";
-                            enderecoCompleto += "Endereço: " + viacep.getLogradouro() + "\n";
-                            enderecoCompleto += "Complemento: " + viacep.getComplemento() + "\n";
-                            enderecoCompleto += "Bairro: " + viacep.getBairro() + "\n";
-                            enderecoCompleto += "Cidade: " + viacep.getLocalidade() + "\n";
-                            enderecoCompleto += "Estado: " + viacep.getUf() + "\n";
-                            enderecoCompleto += "Cod. IBGE: " + viacep.getIbge() + "\n";
+                            enderecoCompleto += "Endereço: " + viaCep.getLogradouro() + "\n";
+                            enderecoCompleto += "Complemento: " + viaCep.getComplemento() + "\n";
+                            enderecoCompleto += "Bairro: " + viaCep.getBairro() + "\n";
+                            enderecoCompleto += "Cidade: " + viaCep.getLocalidade() + "\n";
+                            enderecoCompleto += "Estado: " + viaCep.getUf() + "\n";
+                            enderecoCompleto += "Cod. IBGE: " + viaCep.getIbge() + "\n";
 
                             responseTextView.setText(enderecoCompleto);
-
-
                         } else {
                             Log.d(AppUtil.TAG, "ModeloAzulFragment: onResponse: nao conseguiu consumir api");
                         }
@@ -94,7 +92,6 @@ public class ApiCepFragment extends Fragment {
                         Log.d(AppUtil.TAG, "ModeloAzulFragment: onFailure: nao conseguiu consumir api");
                     }
                 });
-
             }
         });
 

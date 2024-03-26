@@ -7,5 +7,5 @@ import retrofit2.http.Path;
 
 public interface ViaCepService {
     @GET("{cep}/json/")
-    Call<ViaCep> buscarEnderecoPorCEP(@Path("cep") String cep);
+    Call<ViaCep> getEnderecoPorCEP(@Path("cep") String cep);
 }
